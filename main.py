@@ -22,7 +22,7 @@ while running:
 
     # Update particles
     for particle in particles:
-        particle.update()
+        particle.update(particles)
 
     # Clear screen
     screen.fill((0, 0, 0))
