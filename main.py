@@ -25,7 +25,7 @@ while running:
         particle.update(particles)
 
     # Clear screen
-    screen.fill((0, 10, 200))
+    screen.fill((0, 0, 0))
 
     # Draw particles
     for particle in particles:
