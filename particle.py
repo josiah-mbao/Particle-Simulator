@@ -3,15 +3,18 @@ import pygame
 import random
 from settings import SCREEN_WIDTH, SCREEN_HEIGHT
 
+
 class Particle:
     def __init__(self):
+        random_value = random.randint(3, 15)
         self.x = random.randint(0, SCREEN_WIDTH)
         self.y = random.randint(0, SCREEN_HEIGHT)
-        self.vx = 2
-        self.vy = 1
+        self.vx = random.uniform(1, 2.75)  # Randomize velocity in a range
+        self.vy = random.uniform(1, 2.75)
         self.color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-        self.radius = 6
-        self.mass = random.randint(1, 4)
+        self.radius = random_value
+        self.mass = (4/3) * 3.14159 * (self.radius ** 3)  # Mass proportional to volume
+
 
     def update(self, particles, obstacles):
         self.x += self.vx

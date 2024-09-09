@@ -13,11 +13,18 @@ def update_particles():
         particle.update(particles, obstacles)
 
 def draw_objects(screen):
-    screen.fill((0, 0, 0))
+    screen.fill((0, 0, 0))  # Fill the screen with black
+
+    # Create a fade effect
+    s = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SRCALPHA)  # Per-pixel alpha
+    s.fill((0, 0, 0, 20))  # Set alpha transparency to 20 (out of 255)
+    screen.blit(s, (0, 0))  # Apply the fade
+
     for particle in particles:
         particle.draw(screen)
     for obstacle in obstacles:
         pygame.draw.rect(screen, obstacle.color, (obstacle.x, obstacle.y, obstacle.width, obstacle.height))
+
     pygame.display.flip()
 
 # Initialize Pygame
