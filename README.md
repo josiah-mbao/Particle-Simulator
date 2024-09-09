@@ -22,10 +22,12 @@ Originally, the goal was to better understand how physics simulations could be b
    cd particle-simulator
 
 2. Install dependencies:
-    ```pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
 
 3. Run the simulation:
-    ```python main.py
+    ```bash
+    python main.py
 
 
 ## Simulation details
